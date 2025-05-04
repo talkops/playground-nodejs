@@ -1,0 +1,14 @@
+name: TalkOps Extension
+on:
+  push:
+    tags:
+      - 'v*'
+jobs:
+  talkops:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      - uses: talkops/extension@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
