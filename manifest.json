@@ -1,0 +1,21 @@
+{
+  "category": "utility",
+  "demo": true,
+  "features": [
+    "Enable the alarm",
+    "Receive a random dice",
+    "Receive a random dice asynchronously",
+    "Receive a random dice as message",
+    "Receive a random dice as notification",
+    "Receive a random image",
+    "Receive a random video"
+  ],
+  "icon": "https://talkops.app/images/extensions/playground-nodejs.png",
+  "name": "Playground NodeJS",
+  "sdk": {
+    "name": "nodejs",
+    "version": "2.15.0"
+  },
+  "softwareVersion": null,
+  "website": null
+}
