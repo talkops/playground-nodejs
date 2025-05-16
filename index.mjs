@@ -1,6 +1,30 @@
-import { Extension, Image, Video } from 'talkops'
+import { Extension, Image, Parameter, Video } from 'talkops'
 
 const extension = new Extension()
+  .setName('Playground Node.js')
+  .setIcon('https://talkops.app/images/extensions/playground-nodejs.png')
+  .setCategory('utility')
+  .setDemo(true)
+  .setFeatures([
+    'Enable the alarm',
+    'Receive a random dice',
+    'Receive a random dice asynchronously',
+    'Receive a random dice as message',
+    'Receive a random dice as notification',
+    'Receive a random image',
+    'Receive a random video',
+  ])
+
+const color = new Parameter('COLOR')
+  .setDescription('The color used for test.')
+  .setDefaultValue('blue')
+  .setType('select')
+  .setAvailableValues(['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'])
+
+const email = new Parameter('EMAIL')
+  .setDescription('The email used for test.')
+  .setDefaultValue('john.doe@exaple.com')
+  .setType('text')
 
 function enableAlarm() {
   extension.enableAlarm()
@@ -12,7 +36,7 @@ function receiveRandomDice() {
 }
 
 async function receiveRandomDiceAsynchronously() {
-  await new Promise((resolve) => setTimeout(resolve, 2000))
+  await new Promise((resolve) => setTimeout(resolve, 10000))
   return String(Math.floor(Math.random() * 6) + 1)
 }
 
@@ -44,20 +68,43 @@ function receiveRandomVideo() {
   return 'Done.'
 }
 
+function onEnable(language) {
+  console.log('onEnable')
+  console.log(language)
+  console.log(color.getValue())
+  console.log(email.getValue())
+}
+
+function onBoot(language) {
+  console.log('onBoot')
+  console.log(language)
+  console.log(color.getValue())
+  console.log(email.getValue())
+}
+
+function onDisable(language) {
+  console.log('onDisable')
+  console.log(language)
+  console.log(color.getValue())
+  console.log(email.getValue())
+}
+
+function onLanguage(language) {
+  console.log('onLanguage')
+  console.log(language)
+  console.log(color.getValue())
+  console.log(email.getValue())
+}
+
+function onSession(language) {
+  console.log('onSession')
+  console.log(language)
+  console.log(color.getValue())
+  console.log(email.getValue())
+}
+
 extension
-  .setName('Playground NodeJS')
-  .setIcon('https://talkops.app/images/extensions/playground-nodejs.png')
-  .setCategory('utility')
-  .setDemo(true)
-  .setFeatures([
-    'Enable the alarm',
-    'Receive a random dice',
-    'Receive a random dice asynchronously',
-    'Receive a random dice as message',
-    'Receive a random dice as notification',
-    'Receive a random image',
-    'Receive a random video',
-  ])
+  .setParameters([color, email])
   .setFunctionSchemas([
     {
       name: 'enableAlarm',
@@ -97,4 +144,9 @@ extension
     receiveRandomImage,
     receiveRandomVideo,
   ])
+  .on('enable', onEnable)
+  .on('boot', onBoot)
+  .on('disable', onDisable)
+  .on('language', onLanguage)
+  .on('session', onSession)
   .start()

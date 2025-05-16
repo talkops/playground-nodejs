@@ -1,4 +1,4 @@
-# TalkOps Extension: Playground NodeJS
+# TalkOps Extension: Playground Node.js
 
 A TalkOps Extension made to work with [TalkOps](https://talkops.app).
 
@@ -17,5 +17,5 @@ A TalkOps Extension made to work with [TalkOps](https://talkops.app).
 ## Installation
 
 1. Sign in to [TalkOps](https://talkops.app).
-2. Search for the `Playground NodeJS` extension.
+2. Search for the `Playground Node.js` extension.
 3. Add the extension and follow the instructions.
