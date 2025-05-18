@@ -1,10 +1,28 @@
 module.exports = {
   apps: [
     {
-      script: 'index.mjs',
-      watch: true,
-      ignore_watch: ['.git', 'node_modules', 'manifest.json', 'README.md'],
+      cmd: 'talkops',
+      name: 'client',
+    },
+    {
       autorestart: true,
+      error_file: process.env.TALKOPS_STDERR,
+      ignore_watch: [
+        '.git',
+        '.github',
+        'node_modules',
+        '.gitignore',
+        'Dockerfile',
+        'ecosystem.config.cjs',
+        'LICENSE',
+        'manifest.json',
+        'package.json',
+        'README.md',
+      ],
+      name: 'extension',
+      out_file: process.env.TALKOPS_STDOUT,
+      script: 'src/main.mjs',
+      watch: true,
     },
   ],
 }

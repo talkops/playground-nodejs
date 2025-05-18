@@ -1,7 +1,7 @@
 import { Extension, Image, Parameter, Video } from 'talkops'
 
 const extension = new Extension()
-  .setName('Playground Node.js')
+  .setName('Node.js Playground')
   .setIcon('https://talkops.app/images/extensions/playground-nodejs.png')
   .setCategory('utility')
   .setDemo(true)
@@ -23,7 +23,7 @@ const color = new Parameter('COLOR')
 
 const email = new Parameter('EMAIL')
   .setDescription('The email used for test.')
-  .setDefaultValue('john.doe@exaple.com')
+  .setDefaultValue('john.doe@example.com')
   .setType('text')
 
 function enableAlarm() {

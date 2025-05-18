@@ -11,10 +11,10 @@
     "Receive a random video"
   ],
   "icon": "https://talkops.app/images/extensions/playground-nodejs.png",
-  "name": "Playground Node.js",
+  "name": "Node.js Playground",
   "sdk": {
     "name": "nodejs",
-    "version": "2.15.1"
+    "version": "2.15.3"
   },
   "softwareVersion": null,
   "website": null
