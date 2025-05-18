@@ -14,11 +14,11 @@ FROM base AS dev
 USER node
 VOLUME [ "/app" ]
 ENTRYPOINT [ "./entrypoint.sh" ]
-CMD ["pm2-runtime", "ecosystem.config.cjs"]
+CMD ["pm2-runtime", "ecosystem.dev.config.cjs"]
 
-FROM base
-COPY ecosystem.config.cjs package.json ./
+FROM base AS prod
+COPY ecosystem.prod.config.cjs package.json ./
 RUN npm install --omit=dev
 COPY src src
 USER node
-CMD ["pm2-runtime", "ecosystem.config.cjs"]
+CMD ["pm2-runtime", "ecosystem.prod.config.cjs"]
