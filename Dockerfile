@@ -3,7 +3,7 @@ ENV NODE_NO_WARNINGS=1 \
     TALKOPS_SOCKET=/tmp/talkops.sock \
     TALKOPS_STDERR=/tmp/talkops.stderr.log \
     TALKOPS_STDOUT=/tmp/talkops.stdout.log
-RUN npm install -g pm2@6.0.6 talkops-client@1.0.0 && \
+RUN npm install -g pm2@6.0.6 talkops-client@1.0.2 && \
     mkdir /app && \
     mkdir /data && \
     chown node:node /app && \
