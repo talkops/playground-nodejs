@@ -17,7 +17,7 @@ ENTRYPOINT [ "./entrypoint.sh" ]
 CMD ["pm2-runtime", "ecosystem.config.cjs"]
 
 FROM base
-COPY package.json ./
+COPY ecosystem.config.cjs package.json ./
 RUN npm install --omit=dev
 COPY src src
 USER node
