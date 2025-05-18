@@ -1,4 +1,4 @@
-FROM node:24-slim AS base
+FROM node:23-slim AS base
 ENV NODE_NO_WARNINGS=1 \
     TALKOPS_SOCKET=/tmp/talkops.sock \
     TALKOPS_STDERR=/tmp/talkops.stderr.log \
