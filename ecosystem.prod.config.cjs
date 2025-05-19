@@ -5,7 +5,7 @@ module.exports = {
       name: 'client',
     },
     {
-      autorestart: true,
+      autorestart: false,
       error_file: process.env.TALKOPS_STDERR,
       name: 'extension',
       out_file: process.env.TALKOPS_STDOUT,

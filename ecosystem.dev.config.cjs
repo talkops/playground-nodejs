@@ -5,7 +5,7 @@ module.exports = {
       name: 'client',
     },
     {
-      autorestart: true,
+      autorestart: false,
       error_file: process.env.TALKOPS_STDERR,
       ignore_watch: [
         '.git',
